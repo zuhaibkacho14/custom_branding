@@ -1,0 +1,69 @@
+:root {
+    --ws-brand-primary: #875A7B;
+    --ws-brand-primary-rgb: 135 90 123;
+}
+
+.ws_dynamic_branding_preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    background: #f9f9f9;
+    max-width: 320px;
+}
+
+.ws_dynamic_branding_preview_logo {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ws_dynamic_branding_preview_logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.ws_dynamic_branding_preview_text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ws_dynamic_branding_preview_name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3136;
+}
+
+.ws_dynamic_branding_preview_url {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.oe_login_form .o_login_title,
+.oe_login_form h1,
+.o_login_title,
+.o_login_form h1 {
+    color: var(--ws-brand-primary) !important;
+}
+
+body .o_main_navbar .o_menu_brand img,
+body .o_main_navbar .o_menu_brand,
+body .o_menu_brand img {
+    max-height: 28px;
+}
+
+body .o_main_navbar {
+    border-bottom: 1px solid rgba(var(--ws-brand-primary-rgb), 0.2);
+}

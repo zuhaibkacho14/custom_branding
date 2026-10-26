@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_ws_dynamic_branding" model="res.config.settings">
+        <field name="name">Branding Settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Branding" name="ws_dynamic_branding" groups="base.group_system">
+                    <block title="General branding">
+                        <setting string="Brand name" help="The display name used in supported interfaces.">
+                            <field name="ws_brand_name"/>
+                        </setting>
+                        <setting string="Short brand name" help="Short name to use in compact UI areas.">
+                            <field name="ws_brand_short_name"/>
+                        </setting>
+                        <setting string="Brand website URL" help="The public website that will be used in branding links.">
+                            <field name="ws_brand_website" widget="url"/>
+                        </setting>
+                        <setting string="Footer text" help="Text displayed in supported footer and portal branding areas.">
+                            <field name="ws_brand_footer_text"/>
+                        </setting>
+                    </block>
+                    <block title="Logos and visual branding">
+                        <setting string="Brand logo" help="The main company or product logo used for supported brand surfaces.">
+                            <field name="ws_brand_logo" widget="image" class="oe_avatar"/>
+                        </setting>
+                        <setting string="Login logo" help="Logo displayed on standard authentication screens.">
+                            <field name="ws_brand_login_logo" widget="image" class="oe_avatar"/>
+                        </setting>
+                        <setting string="Backend logo" help="Logo for app header or backend navigation areas when supported.">
+                            <field name="ws_brand_backend_logo" widget="image" class="oe_avatar"/>
+                        </setting>
+                        <setting string="Favicon" help="Small browser favicon for supported pages.">
+                            <field name="ws_brand_favicon" widget="image" class="oe_avatar"/>
+                        </setting>
+                    </block>
+                    <block title="Authentication and layout">
+                        <setting string="Login page title" help="Title displayed on authentication screens.">
+                            <field name="ws_brand_login_title"/>
+                        </setting>
+                        <setting string="Login page description" help="Descriptive text shown next to the login form.">
+                            <field name="ws_brand_login_subtitle"/>
+                        </setting>
+                        <setting string="Primary brand color" help="Used for accent styling where supported.">
+                            <field name="ws_brand_primary_color" widget="color"/>
+                        </setting>
+                    </block>
+                    <block title="Spotlights and activation">
+                        <setting string="Enable backend branding" help="Enable branding in supported backend locations.">
+                            <field name="ws_enable_backend_branding"/>
+                        </setting>
+                        <setting string="Enable login branding" help="Enable branding on authentication screens.">
+                            <field name="ws_enable_login_branding"/>
+                        </setting>
+                        <setting string="Enable portal branding" help="Enable branding in supported website and portal views.">
+                            <field name="ws_enable_portal_branding"/>
+                        </setting>
+                        <setting string="Enable email branding" help="Enable shared email-branding placeholders and footer text.">
+                            <field name="ws_enable_email_branding"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_ws_dynamic_branding_settings" model="ir.actions.act_window">
+        <field name="name">Branding Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'ws_dynamic_branding'}</field>
+    </record>
+
+    <menuitem id="menu_ws_dynamic_branding_settings"
+              name="Branding Settings"
+              parent="base.menu_administration"
+              action="action_ws_dynamic_branding_settings"
+              sequence="200"/>
+</odoo>

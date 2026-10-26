@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ws_dynamic_branding.BrandingPreview">
+        <div class="ws_dynamic_branding_preview">
+            <div class="ws_dynamic_branding_preview_logo">
+                <img src="" alt="Brand preview" class="ws_brand_preview_img"/>
+            </div>
+            <div class="ws_dynamic_branding_preview_text">
+                <strong class="ws_brand_preview_name">Brand</strong>
+                <small class="ws_brand_preview_url">https://example.com</small>
+            </div>
+        </div>
+    </t>
+</templates>
